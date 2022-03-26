@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	int n,i,j;
+	scanf("%d",&n);
+	int ji[100],bi[100];
+	char hao[100][17];
+	for(i=0;i<n;i++)
+	{
+		scanf("%s %d %d",hao[i],&ji[i],&bi[i]);
+	}
+
+	int m;
+	scanf("%d",&m);
+	int a[100];
+	for(i=0;i<m;i++) scanf("%d",&a[i]);
+
+	for(i=0;i<m;i++)
+	{
+		int index;
+		for(j=0;j<n;j++)
+		{
+			if(a[i]==ji[j])
+			{
+				index=j;
+				break;
+			}
+		}
+		printf("%s %d\n",hao[index],bi[index]);
+	}
+	return 0;
+}
