@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[]="2*2/4*1/1*2*3/2";
+	int sel=a[0]-'0';
+	for(int i=1;i<strlen(a);i++)
+	{
+		if(a[i]=='*')
+		{
+			int right=a[++i]-'0';
+			sel*=right;
+		}
+		else
+		{
+			int right=a[++i]-'0';
+			sel/=right;
+		}
+	}
+	printf("%d",sel);
+	return 0;
+}
